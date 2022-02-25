@@ -29,7 +29,7 @@ public class GameManager : Singleton<GameManager>
         get { return FlowersValue; }
         set
         {
-            FlowersValueUI.text = "x " + value;
+            FlowersValueUI.text = value + " / 100";
 
             if (value >= 100)
             {
