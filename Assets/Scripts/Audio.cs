@@ -137,14 +137,15 @@ public class Audio : MonoBehaviour
         }
         else if (sceneName == "Ending".ToLower())
         {
-            if (bgmAudioSource.clip != ending1Bgm)
-            {
-                bgmAudioSource.clip = ending1Bgm;
-                bgmAudioSource.Play();
-            }
+//            if (bgmAudioSource.clip != ending1Bgm)
+//            {
+//                bgmAudioSource.clip = ending1Bgm;
+//                bgmAudioSource.Play();
+//            }
             
             targetBgmVolume = 1.0f;
             
+            bgmAudioSource.Stop();
             speechAudioSource.Stop();
         }
         else if (sceneName == "GameExplain".ToLower())
@@ -237,6 +238,10 @@ public class Audio : MonoBehaviour
         if (growValue <= 0)
         {
             PlayPutSeedSound();
+            if (Fairy.Instance)
+            {
+                Fairy.Instance.PlaySwing();
+            }
         }
         else
         {

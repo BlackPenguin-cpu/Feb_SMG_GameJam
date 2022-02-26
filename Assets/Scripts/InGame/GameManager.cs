@@ -163,14 +163,22 @@ public class GameManager : Singleton<GameManager>
         switch (interaction)
         {
             case Interaction.NONE:
-                Cursor.visible = true;
+                if (Application.isEditor == false)
+                {
+                    Cursor.visible = true;
+                }
+
                 MouseIcon.gameObject.SetActive(false);
                 break;
             case Interaction.SCISSORS:
             case Interaction.NET:
             case Interaction.WATERING:
             case Interaction.PLANT:
-                Cursor.visible = false;
+                if (Application.isEditor == false)
+                {
+                    Cursor.visible = false;
+                }
+
                 MouseIcon.sprite = InteracitonSprites[(int)interaction - 1];
                 MouseIcon.gameObject.SetActive(true);
                 MouseIcon.transform.position = Input.mousePosition;
