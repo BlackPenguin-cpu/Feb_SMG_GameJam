@@ -44,6 +44,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] List<Sprite> InteracitonSprites;
     [SerializeField] Image MouseIcon;
 
+    [SerializeField] Camera Cam;
+    [SerializeField] RectTransform MouseIconParentRt;
+
     [Header("게임 바깥쪽 변수")]
     public FlowerType FlowerType;
     void Clear()
@@ -138,6 +141,13 @@ public class GameManager : Singleton<GameManager>
                 MouseIcon.sprite = InteracitonSprites[(int)interaction - 1];
                 MouseIcon.gameObject.SetActive(true);
                 MouseIcon.transform.position = Input.mousePosition;
+
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(MouseIconParentRt, Input.mousePosition, Cam,
+                    out var localPoint);
+                
+                //var mouseLocalPos = MouseIcon.transform.localPosition;
+                //mouseLocalPos.z = 0;
+                MouseIcon.transform.localPosition = localPoint;
                 break;
         }
     }
