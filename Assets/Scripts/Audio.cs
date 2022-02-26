@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -74,6 +72,8 @@ public class Audio : MonoBehaviour
 
     float targetBgmVolume;
     float targetBgmVolumeVel;
+
+    float configBgmVolume = 1.0f;
     
     void Awake()
     {
@@ -92,7 +92,7 @@ public class Audio : MonoBehaviour
 
     void Update()
     {
-        bgmAudioSource.volume = Mathf.SmoothDamp(bgmAudioSource.volume, targetBgmVolume, ref targetBgmVolumeVel, 0.1f);
+        bgmAudioSource.volume = Mathf.SmoothDamp(bgmAudioSource.volume, targetBgmVolume * configBgmVolume, ref targetBgmVolumeVel, 0.1f);
     }
 
     void UpdateBgm(string sceneName)
@@ -220,7 +220,7 @@ public class Audio : MonoBehaviour
 
     public void SetBgmVolume(float volume)
     {
-        bgmAudioSource.volume = volume;
+        configBgmVolume = volume;
     }
 
     public float SFXVolume()
@@ -229,7 +229,7 @@ public class Audio : MonoBehaviour
     }
     public float BGMVolume()
     {
-        return bgmAudioSource.volume;
+        return configBgmVolume;
     }
 
     public void PlayGrowSound(int growValue)
