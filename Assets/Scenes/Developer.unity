@@ -402,8 +402,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "BGM \uCD9C\uCC98 - Music: https://www.bensound.com/royalty-free-music,
-    MEWPOT"
+  m_Text: "BGM \uCD9C\uCC98 - Music: https://www.bensound.com/royalty-free-music"
 --- !u!222 &611572041
 CanvasRenderer:
   m_ObjectHideFlags: 0
