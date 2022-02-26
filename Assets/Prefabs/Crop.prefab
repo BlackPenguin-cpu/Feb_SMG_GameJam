@@ -191,18 +191,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a59e78107b4dfe146bf7f7bf741b0ded, type: 3}
   ChatBallonObj: {fileID: 8899547592250441475}
   TigerSprites:
-  - {fileID: 21300000, guid: ba9eb2d88bc8bc9418e26afda062cc99, type: 3}
-  - {fileID: 21300000, guid: 71a524c8f8b28b74c8fd0b1807bbfb1f, type: 3}
-  - {fileID: 21300000, guid: 776f211df8db67b46b00cea22cdb8f33, type: 3}
+  - {fileID: -6901069083597812627, guid: ba9eb2d88bc8bc9418e26afda062cc99, type: 3}
+  - {fileID: -4676592328628774914, guid: 71a524c8f8b28b74c8fd0b1807bbfb1f, type: 3}
+  - {fileID: 1399003532586209431, guid: 776f211df8db67b46b00cea22cdb8f33, type: 3}
   - {fileID: 21300000, guid: c76632821cf4284428005a6f169dce0e, type: 3}
   KanaitionSprites:
-  - {fileID: 21300000, guid: ba9eb2d88bc8bc9418e26afda062cc99, type: 3}
-  - {fileID: 21300000, guid: 71a524c8f8b28b74c8fd0b1807bbfb1f, type: 3}
-  - {fileID: 21300000, guid: 73371387eb5abed4296114f29ef5e175, type: 3}
+  - {fileID: -6901069083597812627, guid: ba9eb2d88bc8bc9418e26afda062cc99, type: 3}
+  - {fileID: -4676592328628774914, guid: 71a524c8f8b28b74c8fd0b1807bbfb1f, type: 3}
+  - {fileID: 2815236341540640250, guid: 73371387eb5abed4296114f29ef5e175, type: 3}
   - {fileID: 21300000, guid: e0b45d72f7d989542890e2e19b8d88af, type: 3}
   RoseSprites:
-  - {fileID: 21300000, guid: ba9eb2d88bc8bc9418e26afda062cc99, type: 3}
-  - {fileID: 21300000, guid: 71a524c8f8b28b74c8fd0b1807bbfb1f, type: 3}
+  - {fileID: -6901069083597812627, guid: ba9eb2d88bc8bc9418e26afda062cc99, type: 3}
+  - {fileID: -4676592328628774914, guid: 71a524c8f8b28b74c8fd0b1807bbfb1f, type: 3}
   - {fileID: 21300000, guid: 44571fb8872ac9343822e028c8e3d061, type: 3}
   - {fileID: 21300000, guid: a0b219d4c8dc05a4f81446354fb78ce7, type: 3}
 --- !u!61 &6453361830176074458
@@ -218,7 +218,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.25038016}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -229,7 +229,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 3.292957}
   m_EdgeRadius: 0
 --- !u!50 &-4302590641508377187
 Rigidbody2D:
