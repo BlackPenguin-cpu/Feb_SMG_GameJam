@@ -43,6 +43,7 @@ public class GameManager : Singleton<GameManager>
     public Interaction interaction;
     [SerializeField] List<Sprite> InteracitonSprites;
     [SerializeField] Image MouseIcon;
+    [SerializeField] List<Image> ClickButton;
 
     [SerializeField] Camera Cam;
     [SerializeField] RectTransform MouseIconParentRt;
@@ -60,10 +61,42 @@ public class GameManager : Singleton<GameManager>
         {
             MouseIconChange();
             OnInteraction();
+            ButtonOutLine();
         }
         if (Input.GetMouseButtonDown(0))
         {
-            interaction = Interaction.NONE;
+            if (interaction == Interaction.NONE)
+            {
+                Vector2 mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D[] obj = Physics2D.RaycastAll(mousepos, Vector3.forward);
+                foreach (RaycastHit2D hit in obj)
+                {
+                    GameObject crop = hit.collider.gameObject;
+                    if (crop.GetComponent<Crop>())
+                    {
+                        crop.GetComponent<Crop>().OnClick();
+                    }
+                }
+            }
+            else interaction = Interaction.NONE;
+        }
+    }
+    void ButtonOutLine()
+    {
+        if (interaction == Interaction.WATERING)
+        {
+            ClickButton[0].material = Resources.Load<Material>("OutLine");
+            ClickButton[1].material = null;
+        }
+        else if (interaction == Interaction.PLANT)
+        {
+            ClickButton[0].material = null;
+            ClickButton[1].material = Resources.Load<Material>("OutLine");
+        }
+        else
+        {
+            ClickButton[0].material = null;
+            ClickButton[1].material = null;
         }
     }
 
@@ -86,14 +119,14 @@ public class GameManager : Singleton<GameManager>
                         case Interaction.SCISSORS:
                             if (CropState._GrowValue >= 4)
                             {
-                                CropState.Harvest();
+                                //CropState.Harvest();
                             }
                             break;
                         case Interaction.NET:
                             if (CropState.Insect)
                             {
-                                Audio.Instance.PlayBugDeathSound();
-                                CropState.Insect = false;
+                                //Audio.Instance.PlayBugDeathSound();
+                                //CropState.Insect = false;
                             }
                             break;
                         case Interaction.WATERING:
@@ -152,7 +185,7 @@ public class GameManager : Singleton<GameManager>
 
                 RectTransformUtility.ScreenPointToLocalPointInRectangle(MouseIconParentRt, Input.mousePosition, Cam,
                     out var localPoint);
-                
+
                 //var mouseLocalPos = MouseIcon.transform.localPosition;
                 //mouseLocalPos.z = 0;
                 MouseIcon.transform.localPosition = localPoint;
