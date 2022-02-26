@@ -42,7 +42,7 @@ public class Crop : MonoBehaviour
     }
     public void Harvest()
     {
-        Debug.Log("¼öÈ®ÇÔ!");
+        GameManager.Instance._FlowerValue += Random.Range(1,6);
         _GrowValue = 0;
     }
 }
