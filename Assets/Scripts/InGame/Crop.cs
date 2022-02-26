@@ -112,14 +112,22 @@ public class Crop : MonoBehaviour
         }
         if (Insect)
         {
-            InsectObj.SetActive(true);
+            if (InsectObj != null)
+            {
+                InsectObj.SetActive(true);
+            }
+            
             if (InsectTimer > 3)
             {
                 _GrowValue = 0;
             }
+            
             InsectTimer += Time.deltaTime;
         }
-        else InsectObj.SetActive(false);
+        else if (InsectObj != null)
+        {
+            InsectObj.SetActive(false);
+        }
     }
 
     public void Harvest()
