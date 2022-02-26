@@ -950,7 +950,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1212,7 +1212,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1482264206}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 33d3f905ed27f784597d100cf1f896e5, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: bd08442b7e85e6943a41e3256301525a, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -1231,6 +1231,20 @@ PlayableDirector:
   - key: {fileID: 6387151791979269483, guid: 33d3f905ed27f784597d100cf1f896e5, type: 2}
     value: {fileID: 1398521074}
   - key: {fileID: -7224365371008328113, guid: 33d3f905ed27f784597d100cf1f896e5, type: 2}
+    value: {fileID: 1423949132}
+  - key: {fileID: 1693831036123632524, guid: bd08442b7e85e6943a41e3256301525a, type: 2}
+    value: {fileID: 1471839581}
+  - key: {fileID: 820374009293658109, guid: bd08442b7e85e6943a41e3256301525a, type: 2}
+    value: {fileID: 1778824553}
+  - key: {fileID: 5115780691525742251, guid: bd08442b7e85e6943a41e3256301525a, type: 2}
+    value: {fileID: 742344085}
+  - key: {fileID: 8626306381024791136, guid: bd08442b7e85e6943a41e3256301525a, type: 2}
+    value: {fileID: 1986852132}
+  - key: {fileID: -5205217636749286210, guid: bd08442b7e85e6943a41e3256301525a, type: 2}
+    value: {fileID: 165885588}
+  - key: {fileID: 6387151791979269483, guid: bd08442b7e85e6943a41e3256301525a, type: 2}
+    value: {fileID: 1398521074}
+  - key: {fileID: -7224365371008328113, guid: bd08442b7e85e6943a41e3256301525a, type: 2}
     value: {fileID: 1423949132}
   m_ExposedReferences:
     m_References:
