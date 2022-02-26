@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -52,12 +53,15 @@ public class GameManager : Singleton<GameManager>
 
     void Update()
     {
-        MouseIconChange();
+        if (SceneManager.GetActiveScene().name == "InGame")
+        {
+            MouseIconChange();
+            OnInteraction();
+        }
         if (Input.GetMouseButtonDown(0))
         {
             interaction = Interaction.NONE;
         }
-        OnInteraction();
     }
 
     void OnInteraction()
