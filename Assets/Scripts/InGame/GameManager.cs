@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,15 +33,27 @@ public class GameManager : Singleton<GameManager>
         get { return FlowersValue; }
         set
         {
-            FlowersValueUI.text = value + $" / {targetScore}";
+            UpdateFlowersValueText(value);
 
             if (value >= targetScore)
             {
                 Clear();
             }
+            
             FlowersValue = value;
         }
     }
+
+    void Start()
+    {
+        UpdateFlowersValueText(FlowersValue);
+    }
+
+    void UpdateFlowersValueText(int value)
+    {
+        FlowersValueUI.text = value + $" / {targetScore}";
+    }
+
     [SerializeField] Text FlowersValueUI;
 
     public Interaction interaction;
@@ -54,6 +67,11 @@ public class GameManager : Singleton<GameManager>
     [Header("게임 바깥쪽 변수")]
     public FlowerType FlowerType;
     void Clear()
+    {
+        ClearPopup.Instance.TriggerPop();
+    }
+
+    public void LoadEndingScene()
     {
         switch (FlowerType)
         {

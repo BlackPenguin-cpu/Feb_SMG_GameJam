@@ -1305,5 +1305,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Petals Effect
       objectReference: {fileID: 0}
+    - target: {fileID: 4895632618009633751, guid: 1503cd79bf9a5fc46aae84db60073a98, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1503cd79bf9a5fc46aae84db60073a98, type: 3}
