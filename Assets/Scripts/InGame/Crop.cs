@@ -86,6 +86,7 @@ public class Crop : MonoBehaviour
     SpriteRenderer SpriteRenderer;
     [SerializeField] GameObject InsectObj;
     [SerializeField] List<Sprite> ChatBallons;
+    [SerializeField] GameObject ChatBallonObj;
 
     [Header("꽃들 스프라이트들")]
     [SerializeField] List<Sprite> TigerSprites;
@@ -100,12 +101,35 @@ public class Crop : MonoBehaviour
     {
         GrowCooldown -= Time.deltaTime;
         InsectManager();
+        BallonManager();
+    }
+    void BallonManager()
+    {
+        if (Insect)
+        {
+            ChatBallonObj.SetActive(true);
+            ChatBallonObj.GetComponent<SpriteRenderer>().sprite = ChatBallons[0];
+        }
+        else if(GrowValue >= 4)
+        {
+            ChatBallonObj.SetActive(true);
+            ChatBallonObj.GetComponent<SpriteRenderer>().sprite = ChatBallons[1];
+        }
+        else if(GrowCooldown <= 0 && GrowValue != 0)
+        {
+            ChatBallonObj.SetActive(true);
+            ChatBallonObj.GetComponent<SpriteRenderer>().sprite = ChatBallons[2];
+        }
+        else
+        {
+            ChatBallonObj.SetActive(false);
+        }
     }
     void InsectManager()
     {
         if (_GrowValue == 3)
         {
-            if (Random.Range(1, (int)(10000 * Time.deltaTime)) == 1 )
+            if (Random.Range(1, (int)(1000000 * Time.deltaTime)) == 1 )
             {
                 Audio.Instance.PlayBugBuzzSound();
                 Insect = true;
@@ -138,7 +162,7 @@ public class Crop : MonoBehaviour
             Audio.Instance.PlayBugDeathSound();
             Insect = false;
         }
-        else if(GrowCooldown >= 4)
+        else if(GrowValue >= 4)
         {
             Harvest();
         }
