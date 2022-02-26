@@ -26,11 +26,14 @@ public class SceneMove : MonoBehaviour
         Audio.Instance.PlayButtonClick();
         SceneManager.LoadScene("GameExplain");
     }
-    public void SceneInGame()
+    public void SceneInGame(int flowerType)
     {
         if (TitlePostProcess.IsOkToInteract == false) return;
         
         Audio.Instance.PlayButtonClick();
+
+        GameManager.FlowerType = (FlowerType) flowerType;
+        
         SceneManager.LoadScene("InGame");
     }
     public void SceneDeveloper()

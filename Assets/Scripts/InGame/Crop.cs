@@ -23,7 +23,7 @@ public class Crop : MonoBehaviour
             return flower switch
             {
                 FlowerType.TIGER => TigerSprites.Count,
-                FlowerType.KANAITION => KanaitionSprites.Count,
+                FlowerType.CARNATION => KanaitionSprites.Count,
                 FlowerType.ROSE => RoseSprites.Count,
                 _ => 0,
             };
@@ -63,7 +63,7 @@ public class Crop : MonoBehaviour
                         }
 
                         break;
-                    case FlowerType.KANAITION:
+                    case FlowerType.CARNATION:
                         if (value - 1 >= 0 && value - 1 < KanaitionSprites.Count)
                         {
                             if (SpriteRenderer.sprite != KanaitionSprites[value - 1])
@@ -110,7 +110,7 @@ public class Crop : MonoBehaviour
     private void Start()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
-        flower = GameManager.Instance.FlowerType;
+        flower = GameManager.FlowerType;
     }
     private void Update()
     {
