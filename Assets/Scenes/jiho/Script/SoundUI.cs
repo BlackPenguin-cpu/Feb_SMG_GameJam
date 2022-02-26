@@ -16,6 +16,9 @@ public class SoundUI : MonoBehaviour
 
     public void SFXVolume(float volume)
     {
-        Audio.Instance.SetSFXVolume(volume);
+        if (Audio.Instance != null)
+        {
+            Audio.Instance.SetSFXVolume(volume);
+        }
     }
 }
