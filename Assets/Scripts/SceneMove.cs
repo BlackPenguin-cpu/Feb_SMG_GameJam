@@ -21,4 +21,12 @@ public class SceneMove : MonoBehaviour
     {
         SceneManager.LoadScene("InGame");
     }
+    public void SceneDeveloper()
+    {
+        SceneManager.LoadScene("Developer");
+    }
+    public void SceneSound()
+    {
+        SceneManager.LoadScene("Sound");
+    }
 }
