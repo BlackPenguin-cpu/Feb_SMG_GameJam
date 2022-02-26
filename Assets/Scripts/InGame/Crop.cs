@@ -129,7 +129,7 @@ public class Crop : MonoBehaviour
     {
         if (_GrowValue == 3)
         {
-            if (Random.Range(1, (int)(1000000 * Time.deltaTime)) == 1 )
+            if (Random.Range(1, (int)(600000 * Time.deltaTime)) == 1 )
             {
                 Audio.Instance.PlayBugBuzzSound();
                 Insect = true;
