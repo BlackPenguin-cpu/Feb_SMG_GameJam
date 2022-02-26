@@ -104,6 +104,14 @@ public class Audio : MonoBehaviour
                 bgmAudioSource.Play();
             }
         }
+        else if (sceneName == "Ending".ToLower())
+        {
+            if (bgmAudioSource.clip != ending1Bgm)
+            {
+                bgmAudioSource.clip = ending1Bgm;
+                bgmAudioSource.Play();
+            }
+        }
     }
 
     void OnEnable()

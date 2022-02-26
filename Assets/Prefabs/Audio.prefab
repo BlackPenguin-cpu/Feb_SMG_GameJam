@@ -56,9 +56,9 @@ MonoBehaviour:
   harvestFlowerSound: {fileID: 8300000, guid: 20eb822d6e7074bd7be6483da5b56d78, type: 3}
   titleBgm: {fileID: 8300000, guid: 104da7f984886e94c92e7d7e5adf06f3, type: 3}
   inGameBgm: {fileID: 8300000, guid: 4a09c677d586d1544bd98138093a77d6, type: 3}
-  ending1Bgm: {fileID: 0}
-  ending2Bgm: {fileID: 0}
-  ending3Bgm: {fileID: 0}
+  ending1Bgm: {fileID: 8300000, guid: 1c8ef8590789d7f41af0e6a88ef6e30d, type: 3}
+  ending2Bgm: {fileID: 8300000, guid: 527e71d499b50e94eaaee7e9a3e274e1, type: 3}
+  ending3Bgm: {fileID: 8300000, guid: 9821df5233a55574a8b732542295efc4, type: 3}
 --- !u!1 &2210091734646670697
 GameObject:
   m_ObjectHideFlags: 0
