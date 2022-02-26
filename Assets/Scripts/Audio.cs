@@ -81,6 +81,10 @@ public class Audio : MonoBehaviour
     [Tooltip("크레딧 스피치")]
     AudioClip creditSpeech;
     
+    [SerializeField]
+    [Tooltip("올클리어 축하")]
+    AudioClip allClearSound;
+    
     float targetBgmVolume;
     float targetBgmVolumeVel;
 
@@ -269,5 +273,10 @@ public class Audio : MonoBehaviour
     void PlayReadyToHarvestSound()
     {
         sfxAudioSource.PlayOneShot(readyToHarvestSound);
+    }
+
+    public void PlayAllClearSound()
+    {
+        sfxAudioSource.PlayOneShot(allClearSound);
     }
 }

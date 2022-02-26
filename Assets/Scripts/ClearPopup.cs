@@ -22,6 +22,6 @@ public class ClearPopup : MonoBehaviour
 
     public void OnConfirmButton()
     {
-        GameManager.Instance.LoadEndingScene();
+        GameManager.LoadEndingScene();
     }
 }

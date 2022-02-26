@@ -1431,7 +1431,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1986852137}
         m_TargetAssemblyTypeName: SceneMove, Assembly-CSharp
-        m_MethodName: SceneGameMain
+        m_MethodName: SceneGameMainWithAllClearCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

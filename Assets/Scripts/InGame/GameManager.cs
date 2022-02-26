@@ -96,17 +96,23 @@ public class GameManager : Singleton<GameManager>
         ClearPopup.Instance.TriggerPop();
     }
 
-    public void LoadEndingScene()
+    public static void LoadEndingScene()
     {
         switch (FlowerType)
         {
             case FlowerType.TIGER:
+                PlayerPrefs.SetInt("Ending1Clear", 1);
+                PlayerPrefs.Save();
                 SceneManager.LoadScene("Ending1");
                 break;
             case FlowerType.CARNATION:
+                PlayerPrefs.SetInt("Ending2Clear", 1);
+                PlayerPrefs.Save();
                 SceneManager.LoadScene("Ending2");
                 break;
             case FlowerType.ROSE:
+                PlayerPrefs.SetInt("Ending3Clear", 1);
+                PlayerPrefs.Save();
                 SceneManager.LoadScene("Ending3");
                 break;
         }
