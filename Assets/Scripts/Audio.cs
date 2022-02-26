@@ -12,6 +12,9 @@ public class Audio : MonoBehaviour
     
     [SerializeField]
     AudioSource sfxAudioSource;
+    
+    [SerializeField]
+    AudioSource speechAudioSource;
 
     [SerializeField]
     [Tooltip("UI 버튼 클릭")]
@@ -61,6 +64,13 @@ public class Audio : MonoBehaviour
     [Tooltip("엔딩 3 BGM")]
     AudioClip ending3Bgm;
     
+    [SerializeField]
+    [Tooltip("게임 가이드 스피치")]
+    AudioClip gameGuideSpeech;
+
+    float targetBgmVolume;
+    float targetBgmVolumeVel;
+    
     void Awake()
     {
         if (Instance != null)
@@ -76,6 +86,11 @@ public class Audio : MonoBehaviour
         UpdateBgm(SceneManager.GetActiveScene().name);
     }
 
+    void Update()
+    {
+        bgmAudioSource.volume = Mathf.SmoothDamp(bgmAudioSource.volume, targetBgmVolume, ref targetBgmVolumeVel, 0.1f);
+    }
+
     void UpdateBgm(string sceneName)
     {
         sceneName = sceneName.ToLower();
@@ -87,6 +102,10 @@ public class Audio : MonoBehaviour
                 bgmAudioSource.clip = titleBgm;
                 bgmAudioSource.Play();
             }
+            
+            targetBgmVolume = 1.0f;
+            
+            speechAudioSource.Stop();
         }
         else if (sceneName == "flowerSelection".ToLower())
         {
@@ -95,6 +114,10 @@ public class Audio : MonoBehaviour
                 bgmAudioSource.clip = titleBgm;
                 bgmAudioSource.Play();
             }
+            
+            targetBgmVolume = 1.0f;
+            
+            speechAudioSource.Stop();
         }
         else if (sceneName == "InGame".ToLower())
         {
@@ -103,6 +126,10 @@ public class Audio : MonoBehaviour
                 bgmAudioSource.clip = inGameBgm;
                 bgmAudioSource.Play();
             }
+            
+            targetBgmVolume = 1.0f;
+            
+            speechAudioSource.Stop();
         }
         else if (sceneName == "Ending".ToLower())
         {
@@ -111,6 +138,17 @@ public class Audio : MonoBehaviour
                 bgmAudioSource.clip = ending1Bgm;
                 bgmAudioSource.Play();
             }
+            
+            targetBgmVolume = 1.0f;
+            
+            speechAudioSource.Stop();
+        }
+        else if (sceneName == "GameExplain".ToLower())
+        {
+            speechAudioSource.clip = gameGuideSpeech;
+            speechAudioSource.Play();
+            
+            targetBgmVolume = 0.2f;
         }
     }
 
@@ -193,5 +231,10 @@ public class Audio : MonoBehaviour
         {
             PlayWaterSound();    
         }
+    }
+
+    public void PlayGameGuideSpeech()
+    {
+        speechAudioSource.PlayOneShot(gameGuideSpeech);
     }
 }
