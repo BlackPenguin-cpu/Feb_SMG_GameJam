@@ -161,6 +161,20 @@ public class Audio : MonoBehaviour
         sfxAudioSource.volume = volume;
     }
 
+    public void SetBgmVolume(float volume)
+    {
+        bgmAudioSource.volume = volume;
+    }
+
+    public float SFXVolume()
+    {
+        return sfxAudioSource.volume;
+    }
+    public float BGMVolume()
+    {
+        return bgmAudioSource.volume;
+    }
+
     public void PlayGrowSound(int growValue)
     {
         if (growValue <= 0)
