@@ -26,13 +26,40 @@ public class Crop : MonoBehaviour
                 switch (flower)
                 {
                     case FlowerType.TIGER:
-                        SpriteRenderer.sprite = TigerSprites[value - 1];
+                        if (value - 1 >= 0 && value - 1 < TigerSprites.Count)
+                        {
+                            if (SpriteRenderer.sprite != TigerSprites[value - 1])
+                            {
+                                Audio.Instance.PlayGrowSound(_GrowValue);
+                            }
+
+                            SpriteRenderer.sprite = TigerSprites[value - 1];
+                        }
+
                         break;
                     case FlowerType.KANAITION:
-                        SpriteRenderer.sprite = KanaitionSprites[value - 1];
+                        if (value - 1 >= 0 && value - 1 < KanaitionSprites.Count)
+                        {
+                            if (SpriteRenderer.sprite != KanaitionSprites[value - 1])
+                            {
+                                Audio.Instance.PlayGrowSound(_GrowValue);
+                            }
+
+                            SpriteRenderer.sprite = KanaitionSprites[value - 1];
+                        }
+
                         break;
                     case FlowerType.ROSE:
-                        SpriteRenderer.sprite = RoseSprites[value - 1];
+                        if (value - 1 >= 0 && value - 1 < RoseSprites.Count)
+                        {
+                            if (SpriteRenderer.sprite != RoseSprites[value - 1])
+                            {
+                                Audio.Instance.PlayGrowSound(_GrowValue);
+                            }
+
+                            SpriteRenderer.sprite = RoseSprites[value - 1];
+                        }
+
                         break;
                 }
             GrowValue = value;
@@ -43,7 +70,7 @@ public class Crop : MonoBehaviour
     [SerializeField] float InsectTimer;
     SpriteRenderer SpriteRenderer;
 
-    [Header("²É ½ºÇÁ¶óÀÌÆ®µé")]
+    [Header("Â²Ã‰ Â½ÂºÃ‡ÃÂ¶Ã³Ã€ÃŒÃ†Â®ÂµÃ©")]
     [SerializeField] List<Sprite> TigerSprites;
     [SerializeField] List<Sprite> KanaitionSprites;
     [SerializeField] List<Sprite> RoseSprites;
@@ -80,5 +107,6 @@ public class Crop : MonoBehaviour
     {
         GameManager.Instance._FlowerValue += Random.Range(1, 6);
         _GrowValue = 0;
+        Audio.Instance.PlayHarvestFlowerSound();
     }
 }

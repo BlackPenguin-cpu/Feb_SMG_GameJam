@@ -41,15 +41,6 @@ public class Audio : MonoBehaviour
         Instance = this;
     }
 
-    IEnumerator Start()
-    {
-        PlayButtonClick();
-        yield return new WaitForSeconds(2.0f);
-        PlayWaterSound();
-        yield return new WaitForSeconds(2.0f);
-        PlayPutSeedSound();
-    }
-
     public void PlayButtonClick()
     {
         sfxAudioSource.PlayOneShot(buttonClick);
@@ -88,5 +79,17 @@ public class Audio : MonoBehaviour
     public void SetSFXVolume(float volume)
     {
         sfxAudioSource.volume = volume;
+    }
+
+    public void PlayGrowSound(int growValue)
+    {
+        if (growValue <= 0)
+        {
+            PlayPutSeedSound();
+        }
+        else
+        {
+            PlayWaterSound();    
+        }
     }
 }

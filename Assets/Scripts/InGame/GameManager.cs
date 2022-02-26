@@ -81,7 +81,7 @@ public class GameManager : Singleton<GameManager>
                     switch (interaction)
                     {
                         case Interaction.SCISSORS:
-                            if (CropState._GrowValue == 4)
+                            if (CropState._GrowValue >= 4)
                             {
                                 CropState.Harvest();
                             }
@@ -116,6 +116,7 @@ public class GameManager : Singleton<GameManager>
     public void IconClick(int value)
     {
         interaction = (Interaction)value;
+        Audio.Instance.PlayButtonClick();
     }
     ///<summary>
     ///마우스 아이콘을 바꿔준다

@@ -99,21 +99,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrowValue: 0
   Insect: 0
+  InsectTimer: 0
   TigerSprites:
   - {fileID: 21300000, guid: 873ce4232267256418d6b75278634dda, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: fadb51b9e73598649af44b780bfa113e, type: 3}
+  - {fileID: 21300000, guid: e02e7c074287e2946882610b2eb7a0b9, type: 3}
+  - {fileID: 21300000, guid: 56e500c6dc4052146b957e3d96e1d4fe, type: 3}
   KanaitionSprites:
   - {fileID: 21300000, guid: 9c9dc31a3e1894c429e871c68591198e, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: b30286c40a181a344bfbd41636f97f65, type: 3}
+  - {fileID: 21300000, guid: 734e9a77d94f88245bad1acc1a2bbbef, type: 3}
+  - {fileID: 21300000, guid: c0c5220613f596b44a65b993eb4492a4, type: 3}
   RoseSprites:
   - {fileID: 21300000, guid: 761faee01b73fbf4e807a1c84d10f47a, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: b943bf595202a3043b9ce2221c6a7eab, type: 3}
+  - {fileID: 21300000, guid: 70cfafe579f1b3b41bf5d8968cb2488d, type: 3}
+  - {fileID: 21300000, guid: e8541198b2d26734c8a14863381175d7, type: 3}
 --- !u!61 &6453361830176074458
 BoxCollider2D:
   m_ObjectHideFlags: 0
