@@ -84,8 +84,9 @@ public class Crop : MonoBehaviour
     public bool Insect;
     [SerializeField] float InsectTimer;
     SpriteRenderer SpriteRenderer;
+    GameObject InsectObj;
 
-    [Header("²É ½ºÇÁ¶óÀÌÆ®µé")]
+    [Header("꽃들 스프라이트들")]
     [SerializeField] List<Sprite> TigerSprites;
     [SerializeField] List<Sprite> KanaitionSprites;
     [SerializeField] List<Sprite> RoseSprites;
@@ -111,12 +112,14 @@ public class Crop : MonoBehaviour
         }
         if (Insect)
         {
+            InsectObj.SetActive(true);
             if (InsectTimer > 3)
             {
                 _GrowValue = 0;
             }
             InsectTimer += Time.deltaTime;
         }
+        else InsectObj.SetActive(false);
     }
 
     public void Harvest()
