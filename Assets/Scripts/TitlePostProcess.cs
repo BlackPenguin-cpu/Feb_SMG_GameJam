@@ -1,14 +1,14 @@
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
 
 public class TitlePostProcess : MonoBehaviour
 {
     static TitlePostProcess Instance;
-    
+
     [SerializeField]
-    PostProcessVolume volume;
-    
-    Bloom bloom;
+    Volume volume;
+
+    UnityEngine.Rendering.Universal.Bloom bloom;
     float currentVel;
 
     public static bool IsOkToInteract => Instance == null || Instance.bloom.intensity.value <= 10.0f;
@@ -21,28 +21,27 @@ public class TitlePostProcess : MonoBehaviour
     void Start()
     {
         volume.profile = Instantiate(volume.profile);
-        
-        if (volume.profile.settings[0] is Bloom inBloom)
+
+        if (volume.profile.components[0] is UnityEngine.Rendering.Universal.Bloom inBloom)
         {
             bloom = inBloom;
 
             if (Time.frameCount == 1)
             {
-                bloom.intensity.value = 100.0f;
+                bloom.intensity.value = 200.0f;
             }
             else
             {
                 bloom.intensity.value = 0.0f;
             }
         }
-        
     }
 
     void Update()
     {
         if (bloom != null)
         {
-            bloom.intensity.value = Mathf.SmoothDamp(bloom.intensity.value, 0, ref currentVel, 1.5f);
+            bloom.intensity.value = Mathf.SmoothDamp(bloom.intensity.value, 0, ref currentVel, 1.0f);
         }
     }
 }
