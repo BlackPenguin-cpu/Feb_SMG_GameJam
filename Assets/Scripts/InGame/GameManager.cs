@@ -52,7 +52,19 @@ public class GameManager : Singleton<GameManager>
     public FlowerType FlowerType;
     void Clear()
     {
-        Debug.Log("ÀÌ°å´ß!!! ¿À´Ã Àú³áÀº Ä¡Å²ÀÌ´ß!");
+        switch (FlowerType)
+        {
+            case FlowerType.TIGER:
+                SceneManager.LoadScene("Ending1");
+                break;
+            case FlowerType.KANAITION:
+                SceneManager.LoadScene("Ending2");
+                break;
+            case FlowerType.ROSE:
+                break;
+            default:
+                break;
+        }
     }
 
     void Update()
