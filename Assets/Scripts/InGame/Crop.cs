@@ -84,7 +84,8 @@ public class Crop : MonoBehaviour
     public bool Insect;
     [SerializeField] float InsectTimer;
     SpriteRenderer SpriteRenderer;
-    GameObject InsectObj;
+    [SerializeField] GameObject InsectObj;
+    [SerializeField] List<Sprite> ChatBallons;
 
     [Header("꽃들 스프라이트들")]
     [SerializeField] List<Sprite> TigerSprites;
@@ -104,7 +105,7 @@ public class Crop : MonoBehaviour
     {
         if (_GrowValue == 3)
         {
-            if (Random.Range(1, 1000) == 1)
+            if (Random.Range(1, (int)(10000 * Time.deltaTime)) == 1 )
             {
                 Audio.Instance.PlayBugBuzzSound();
                 Insect = true;
@@ -120,6 +121,7 @@ public class Crop : MonoBehaviour
             if (InsectTimer > 3)
             {
                 _GrowValue = 0;
+                Insect = false;
             }
             
             InsectTimer += Time.deltaTime;
@@ -129,6 +131,19 @@ public class Crop : MonoBehaviour
             InsectObj.SetActive(false);
         }
     }
+    public void OnClick()
+    {
+        if (Insect)
+        {
+            Audio.Instance.PlayBugDeathSound();
+            Insect = false;
+        }
+        else if(GrowCooldown >= 4)
+        {
+            Harvest();
+        }
+    }
+
 
     public void Harvest()
     {
