@@ -89,11 +89,12 @@ public class GameManager : Singleton<GameManager>
                         case Interaction.NET:
                             if (CropState.Insect)
                             {
+                                Audio.Instance.PlayBugDeathSound();
                                 CropState.Insect = false;
                             }
                             break;
                         case Interaction.WATERING:
-                            if (!CropState.Insect && CropState._GrowValue > 0)
+                            if (!CropState.Insect && CropState._GrowValue > 0 && CropState._IsMaxGrow == false)
                             {
                                 CropState._GrowValue++;
                             }

@@ -8,6 +8,21 @@ public class Crop : MonoBehaviour
     [SerializeField] private int GrowValue;
     float GrowCooldown;
 
+    int _MaxGrowValue
+    {
+        get
+        {
+            return flower switch
+            {
+                FlowerType.TIGER => TigerSprites.Count,
+                FlowerType.KANAITION => KanaitionSprites.Count,
+                FlowerType.ROSE => RoseSprites.Count,
+            };
+        }
+    }
+
+    public bool _IsMaxGrow => _GrowValue >= _MaxGrowValue;
+
     public int _GrowValue
     {
         get { return GrowValue; }
@@ -86,10 +101,11 @@ public class Crop : MonoBehaviour
     }
     void InsectManager()
     {
-        if (GrowValue == 3)
+        if (_GrowValue == 3)
         {
             if (Random.Range(1, 1000) == 1)
             {
+                Audio.Instance.PlayBugBuzzSound();
                 Insect = true;
             }
         }
