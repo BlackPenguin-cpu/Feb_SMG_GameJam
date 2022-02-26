@@ -836,7 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed73c17f03356b489b4149f01cee536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 5f5b098d5bc2584499a8b0d490f9a458, type: 2}
+  volume: {fileID: 970970194}
 --- !u!1 &1050169959
 GameObject:
   m_ObjectHideFlags: 0
