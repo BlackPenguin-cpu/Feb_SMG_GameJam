@@ -23,15 +23,18 @@ public enum FlowerType
 }
 public class GameManager : Singleton<GameManager>
 {
+    [SerializeField]
+    int targetScore = 100;
+    
     private int FlowersValue;
     public int _FlowerValue
     {
         get { return FlowersValue; }
         set
         {
-            FlowersValueUI.text = value + " / 100";
+            FlowersValueUI.text = value + $" / {targetScore}";
 
-            if (value >= 100)
+            if (value >= targetScore)
             {
                 Clear();
             }

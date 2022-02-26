@@ -2276,6 +2276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNotSingle: 0
   isNotDontdestroy: 1
+  targetScore: 5
   FlowersValueUI: {fileID: 1859236277}
   interaction: 0
   InteracitonSprites:

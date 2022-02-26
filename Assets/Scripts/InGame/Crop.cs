@@ -12,6 +12,9 @@ public class Crop : MonoBehaviour
     
     [SerializeField]
     GameObject harvestEffectPrefab;
+    
+    [SerializeField]
+    GameObject harvestEffect2Prefab;
 
     int _MaxGrowValue
     {
@@ -186,9 +189,15 @@ public class Crop : MonoBehaviour
         GameManager.Instance._FlowerValue += Random.Range(1, 6);
         _GrowValue = 0;
         Audio.Instance.PlayHarvestFlowerSound();
+        
         var harvestEffect = Instantiate(harvestEffectPrefab);
         var pos = transform.position;
         pos.y += 1.0f;
         harvestEffect.transform.position = pos;
+        
+        var harvest2Effect = Instantiate(harvestEffect2Prefab);
+        var pos2 = transform.position;
+        pos2.y += 2.0f;
+        harvest2Effect.transform.position = pos2;
     }
 }
