@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 251623205}
   - component: {fileID: 251623204}
   m_Layer: 5
-  m_Name: SFX
+  m_Name: SFXText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BGM
+  m_Text: SFX
 --- !u!222 &251623205
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -430,7 +430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &255538226
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1503,6 +1503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 809189833}
+  - component: {fileID: 809189834}
   m_Layer: 5
   m_Name: SoundUI
   m_TagString: Untagged
@@ -1532,6 +1533,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &809189834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809189832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad7836019c5f6f47a9b566578258b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &824436570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,7 +2328,7 @@ GameObject:
   - component: {fileID: 1209980692}
   - component: {fileID: 1209980691}
   m_Layer: 5
-  m_Name: BGM
+  m_Name: BGMText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3106,7 +3119,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 809189834}
+        m_TargetAssemblyTypeName: SoundUI, Assembly-CSharp
+        m_MethodName: SFXVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1730033911
 GameObject:
   m_ObjectHideFlags: 0

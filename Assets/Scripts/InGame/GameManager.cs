@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 [System.Serializable]
 public enum Interaction
@@ -38,11 +37,11 @@ public class GameManager : Singleton<GameManager>
             FlowersValue = value;
         }
     }
-    [SerializeField] TextMeshProUGUI FlowersValueUI;
+    [SerializeField] Text FlowersValueUI;
 
     public Interaction interaction;
     [SerializeField] List<Sprite> InteracitonSprites;
-    [SerializeField] GameObject MouseIcon;
+    [SerializeField] Image MouseIcon;
 
     [Header("게임 바깥쪽 변수")]
     public FlowerType FlowerType;
@@ -54,7 +53,7 @@ public class GameManager : Singleton<GameManager>
     void Update()
     {
         MouseIconChange();
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonDown(0))
         {
             interaction = Interaction.NONE;
         }
@@ -78,7 +77,7 @@ public class GameManager : Singleton<GameManager>
                     switch (interaction)
                     {
                         case Interaction.SCISSORS:
-                            if(CropState._GrowValue == 4)
+                            if (CropState._GrowValue == 4)
                             {
                                 CropState.Harvest();
                             }
@@ -122,16 +121,17 @@ public class GameManager : Singleton<GameManager>
         switch (interaction)
         {
             case Interaction.NONE:
+                Cursor.visible = true;
+                MouseIcon.gameObject.SetActive(false);
                 break;
             case Interaction.SCISSORS:
-                break;
             case Interaction.NET:
-                break;
             case Interaction.WATERING:
-                break;
             case Interaction.PLANT:
-                break;
-            default:
+                Cursor.visible = false;
+                MouseIcon.sprite = InteracitonSprites[(int)interaction - 1];
+                MouseIcon.gameObject.SetActive(true);
+                MouseIcon.transform.position = Input.mousePosition;
                 break;
         }
     }
