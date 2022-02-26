@@ -5,7 +5,7 @@ using UnityEngine;
 public class Crop : MonoBehaviour
 {
     FlowerType flower;
-    private int GrowValue;
+    [SerializeField] private int GrowValue;
 
     public int _GrowValue
     {
@@ -15,13 +15,13 @@ public class Crop : MonoBehaviour
             switch (flower)
             {
                 case FlowerType.TIGER:
-                    SpriteRenderer.sprite = TigerSprites[value];
+                    SpriteRenderer.sprite = TigerSprites[value -1];
                     break;
                 case FlowerType.KANAITION:
-                    SpriteRenderer.sprite = KanaitionSprites[value];
+                    SpriteRenderer.sprite = KanaitionSprites[value- 1];
                     break;
                 case FlowerType.ROSE:
-                    SpriteRenderer.sprite = RoseSprites[value];
+                    SpriteRenderer.sprite = RoseSprites[value - 1];
                     break;
             }
             GrowValue = value;
@@ -43,6 +43,6 @@ public class Crop : MonoBehaviour
     public void Harvest()
     {
         GameManager.Instance._FlowerValue += Random.Range(1,6);
-        _GrowValue = 0;
+        GrowValue = 0;
     }
 }
