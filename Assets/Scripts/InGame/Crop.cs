@@ -7,6 +7,12 @@ public class Crop : MonoBehaviour
     [SerializeField] private int GrowValue;
     float GrowCooldown;
 
+    [SerializeField]
+    GameObject[] puffPrefabList;
+    
+    [SerializeField]
+    GameObject harvestEffectPrefab;
+
     int _MaxGrowValue
     {
         get
@@ -46,6 +52,8 @@ public class Crop : MonoBehaviour
                             if (SpriteRenderer.sprite != TigerSprites[value - 1])
                             {
                                 Audio.Instance.PlayGrowSound(_GrowValue);
+                                var puff = Instantiate(puffPrefabList[value - 1]);
+                                puff.transform.position = transform.position;
                             }
 
                             SpriteRenderer.sprite = TigerSprites[value - 1];
@@ -58,6 +66,8 @@ public class Crop : MonoBehaviour
                             if (SpriteRenderer.sprite != KanaitionSprites[value - 1])
                             {
                                 Audio.Instance.PlayGrowSound(_GrowValue);
+                                var puff = Instantiate(puffPrefabList[value - 1]);
+                                puff.transform.position = transform.position;
                             }
 
                             SpriteRenderer.sprite = KanaitionSprites[value - 1];
@@ -70,6 +80,8 @@ public class Crop : MonoBehaviour
                             if (SpriteRenderer.sprite != RoseSprites[value - 1])
                             {
                                 Audio.Instance.PlayGrowSound(_GrowValue);
+                                var puff = Instantiate(puffPrefabList[value - 1]);
+                                puff.transform.position = transform.position;
                             }
 
                             SpriteRenderer.sprite = RoseSprites[value - 1];
@@ -174,5 +186,9 @@ public class Crop : MonoBehaviour
         GameManager.Instance._FlowerValue += Random.Range(1, 6);
         _GrowValue = 0;
         Audio.Instance.PlayHarvestFlowerSound();
+        var harvestEffect = Instantiate(harvestEffectPrefab);
+        var pos = transform.position;
+        pos.y += 1.0f;
+        harvestEffect.transform.position = pos;
     }
 }
