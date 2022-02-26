@@ -67,6 +67,10 @@ public class Audio : MonoBehaviour
     [SerializeField]
     [Tooltip("게임 가이드 스피치")]
     AudioClip gameGuideSpeech;
+    
+    [SerializeField]
+    [Tooltip("크레딧 스피치")]
+    AudioClip creditSpeech;
 
     float targetBgmVolume;
     float targetBgmVolumeVel;
@@ -146,6 +150,13 @@ public class Audio : MonoBehaviour
         else if (sceneName == "GameExplain".ToLower())
         {
             speechAudioSource.clip = gameGuideSpeech;
+            speechAudioSource.Play();
+            
+            targetBgmVolume = 0.2f;
+        }
+        else if (sceneName == "Developer".ToLower())
+        {
+            speechAudioSource.clip = creditSpeech;
             speechAudioSource.Play();
             
             targetBgmVolume = 0.2f;

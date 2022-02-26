@@ -62,6 +62,7 @@ MonoBehaviour:
   ending2Bgm: {fileID: 8300000, guid: 527e71d499b50e94eaaee7e9a3e274e1, type: 3}
   ending3Bgm: {fileID: 8300000, guid: 9821df5233a55574a8b732542295efc4, type: 3}
   gameGuideSpeech: {fileID: 8300000, guid: 156d3ed49c3f0eb409c7dcc37e37b958, type: 3}
+  creditSpeech: {fileID: 8300000, guid: 751fba659b0a85f4686aa274b8e5f787, type: 3}
 --- !u!1 &2210091734646670697
 GameObject:
   m_ObjectHideFlags: 0
