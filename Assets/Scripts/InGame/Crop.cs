@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +16,7 @@ public class Crop : MonoBehaviour
                 FlowerType.TIGER => TigerSprites.Count,
                 FlowerType.KANAITION => KanaitionSprites.Count,
                 FlowerType.ROSE => RoseSprites.Count,
+                _ => 0,
             };
         }
     }

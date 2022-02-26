@@ -1,9 +1,14 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Audio : MonoBehaviour
 {
     public static Audio Instance;
+    
+    [SerializeField]
+    AudioSource bgmAudioSource;
     
     [SerializeField]
     AudioSource sfxAudioSource;
@@ -35,12 +40,87 @@ public class Audio : MonoBehaviour
     [SerializeField]
     [Tooltip("꽃 수확")]
     AudioClip harvestFlowerSound;
+
+    [SerializeField]
+    [Tooltip("타이틀 BGM")]
+    AudioClip titleBgm;
+    
+    [SerializeField]
+    [Tooltip("인게임 BGM")]
+    AudioClip inGameBgm;
+    
+    [SerializeField]
+    [Tooltip("엔딩 1 BGM")]
+    AudioClip ending1Bgm;
+    
+    [SerializeField]
+    [Tooltip("엔딩 2 BGM")]
+    AudioClip ending2Bgm;
+    
+    [SerializeField]
+    [Tooltip("엔딩 3 BGM")]
+    AudioClip ending3Bgm;
     
     void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
         Instance = this;
+        
+        DontDestroyOnLoad(gameObject);
+
+        UpdateBgm(SceneManager.GetActiveScene().name);
     }
 
+    void UpdateBgm(string sceneName)
+    {
+        sceneName = sceneName.ToLower();
+        
+        if (sceneName == "GameMain".ToLower())
+        {
+            if (bgmAudioSource.clip != titleBgm)
+            {
+                bgmAudioSource.clip = titleBgm;
+                bgmAudioSource.Play();
+            }
+        }
+        else if (sceneName == "flowerSelection".ToLower())
+        {
+            if (bgmAudioSource.clip != titleBgm)
+            {
+                bgmAudioSource.clip = titleBgm;
+                bgmAudioSource.Play();
+            }
+        }
+        else if (sceneName == "InGame".ToLower())
+        {
+            if (bgmAudioSource.clip != inGameBgm)
+            {
+                bgmAudioSource.clip = inGameBgm;
+                bgmAudioSource.Play();
+            }
+        }
+    }
+
+    void OnEnable()
+    {
+        SceneManager.activeSceneChanged += OnActiveSceneChanged;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.activeSceneChanged -= OnActiveSceneChanged;
+    }
+
+    void OnActiveSceneChanged(Scene scene1, Scene scene2)
+    {
+        UpdateBgm(scene2.name);
+    }
+    
     public void PlayButtonClick()
     {
         sfxAudioSource.PlayOneShot(buttonClick);
