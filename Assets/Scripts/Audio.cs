@@ -84,4 +84,9 @@ public class Audio : MonoBehaviour
     {
         sfxAudioSource.PlayOneShot(harvestFlowerSound);
     }
+
+    public void SetSFXVolume(float volume)
+    {
+        sfxAudioSource.volume = volume;
+    }
 }
