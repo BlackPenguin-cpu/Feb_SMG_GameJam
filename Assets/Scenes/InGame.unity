@@ -2689,7 +2689,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a6425204bb723c0429601a1ada7bef17, type: 3}
   - {fileID: 21300000, guid: ddc01a6b4597b82488c560c1107eaaa3, type: 3}
   - {fileID: 21300000, guid: c8b7d0aab1264914d83517e872a82df2, type: 3}
-  targetScore: 5
+  targetScore: 100
   FlowersValueUI: {fileID: 1859236277}
   interaction: 0
   InteracitonSprites:
