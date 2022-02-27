@@ -182,6 +182,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GrowValue: 0
+  puffPrefabList:
+  - {fileID: 100000, guid: 83cd9cc9f9c88824ba18dc59b05ae328, type: 3}
+  - {fileID: 1687118924408352, guid: 77c69ec12208c4c4380d15e30b6f8f68, type: 3}
+  - {fileID: 1687118924408352, guid: 77c69ec12208c4c4380d15e30b6f8f68, type: 3}
+  - {fileID: 1687118924408352, guid: 77c69ec12208c4c4380d15e30b6f8f68, type: 3}
+  harvestEffectPrefab: {fileID: 100006, guid: 8fc06027b01064e4f885fd8dd2929310, type: 3}
+  harvestEffect2Prefab: {fileID: 1247311384876784, guid: 4adffb0018aeda44e9263f901167af1f, type: 3}
   Insect: 0
   InsectTimer: 0
   InsectObj: {fileID: 6025853395795128024}

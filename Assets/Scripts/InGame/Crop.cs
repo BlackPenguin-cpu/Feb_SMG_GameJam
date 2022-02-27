@@ -7,6 +7,15 @@ public class Crop : MonoBehaviour
     [SerializeField] private int GrowValue;
     float GrowCooldown;
 
+    [SerializeField]
+    GameObject[] puffPrefabList;
+    
+    [SerializeField]
+    GameObject harvestEffectPrefab;
+    
+    [SerializeField]
+    GameObject harvestEffect2Prefab;
+
     int _MaxGrowValue
     {
         get
@@ -14,7 +23,7 @@ public class Crop : MonoBehaviour
             return flower switch
             {
                 FlowerType.TIGER => TigerSprites.Count,
-                FlowerType.KANAITION => KanaitionSprites.Count,
+                FlowerType.CARNATION => KanaitionSprites.Count,
                 FlowerType.ROSE => RoseSprites.Count,
                 _ => 0,
             };
@@ -46,18 +55,22 @@ public class Crop : MonoBehaviour
                             if (SpriteRenderer.sprite != TigerSprites[value - 1])
                             {
                                 Audio.Instance.PlayGrowSound(_GrowValue);
+                                var puff = Instantiate(puffPrefabList[value - 1]);
+                                puff.transform.position = transform.position;
                             }
 
                             SpriteRenderer.sprite = TigerSprites[value - 1];
                         }
 
                         break;
-                    case FlowerType.KANAITION:
+                    case FlowerType.CARNATION:
                         if (value - 1 >= 0 && value - 1 < KanaitionSprites.Count)
                         {
                             if (SpriteRenderer.sprite != KanaitionSprites[value - 1])
                             {
                                 Audio.Instance.PlayGrowSound(_GrowValue);
+                                var puff = Instantiate(puffPrefabList[value - 1]);
+                                puff.transform.position = transform.position;
                             }
 
                             SpriteRenderer.sprite = KanaitionSprites[value - 1];
@@ -70,6 +83,8 @@ public class Crop : MonoBehaviour
                             if (SpriteRenderer.sprite != RoseSprites[value - 1])
                             {
                                 Audio.Instance.PlayGrowSound(_GrowValue);
+                                var puff = Instantiate(puffPrefabList[value - 1]);
+                                puff.transform.position = transform.position;
                             }
 
                             SpriteRenderer.sprite = RoseSprites[value - 1];
@@ -95,7 +110,7 @@ public class Crop : MonoBehaviour
     private void Start()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
-        flower = GameManager.Instance.FlowerType;
+        flower = GameManager.FlowerType;
     }
     private void Update()
     {
@@ -174,5 +189,15 @@ public class Crop : MonoBehaviour
         GameManager.Instance._FlowerValue += Random.Range(1, 6);
         _GrowValue = 0;
         Audio.Instance.PlayHarvestFlowerSound();
+        
+        var harvestEffect = Instantiate(harvestEffectPrefab);
+        var pos = transform.position;
+        pos.y += 1.0f;
+        harvestEffect.transform.position = pos;
+        
+        var harvest2Effect = Instantiate(harvestEffect2Prefab);
+        var pos2 = transform.position;
+        pos2.y += 2.0f;
+        harvest2Effect.transform.position = pos2;
     }
 }

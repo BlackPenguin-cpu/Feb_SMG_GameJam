@@ -12,6 +12,9 @@ public class Audio : MonoBehaviour
     AudioSource sfxAudioSource;
     
     [SerializeField]
+    AudioSource sfx2AudioSource;
+    
+    [SerializeField]
     AudioSource speechAudioSource;
 
     [SerializeField]
@@ -39,8 +42,16 @@ public class Audio : MonoBehaviour
     AudioClip bugDeathSound;
     
     [SerializeField]
-    [Tooltip("꽃 수확")]
+    [Tooltip("꽃 수확 가능 상태가 됐을 때")]
+    AudioClip readyToHarvestSound;
+    
+    [SerializeField]
+    [Tooltip("꽃 수확 (가위 소리)")]
     AudioClip harvestFlowerSound;
+    
+    [SerializeField]
+    [Tooltip("꽃 수확 (축하음)")]
+    AudioClip correctSound;
 
     [SerializeField]
     [Tooltip("타이틀 BGM")]
@@ -69,7 +80,11 @@ public class Audio : MonoBehaviour
     [SerializeField]
     [Tooltip("크레딧 스피치")]
     AudioClip creditSpeech;
-
+    
+    [SerializeField]
+    [Tooltip("올클리어 축하")]
+    AudioClip allClearSound;
+    
     float targetBgmVolume;
     float targetBgmVolumeVel;
 
@@ -135,7 +150,7 @@ public class Audio : MonoBehaviour
             
             speechAudioSource.Stop();
         }
-        else if (sceneName == "Ending".ToLower())
+        else if (sceneName.StartsWith("Ending".ToLower()))
         {
 //            if (bgmAudioSource.clip != ending1Bgm)
 //            {
@@ -212,6 +227,7 @@ public class Audio : MonoBehaviour
     public void PlayHarvestFlowerSound()
     {
         sfxAudioSource.PlayOneShot(harvestFlowerSound);
+        sfx2AudioSource.PlayOneShot(correctSound);
     }
 
     public void SetSFXVolume(float volume)
@@ -245,12 +261,22 @@ public class Audio : MonoBehaviour
         }
         else
         {
-            PlayWaterSound();    
+            PlayWaterSound();
+
+            if (growValue >= 3)
+            {
+                PlayReadyToHarvestSound();
+            }
         }
     }
 
-    public void PlayGameGuideSpeech()
+    void PlayReadyToHarvestSound()
     {
-        speechAudioSource.PlayOneShot(gameGuideSpeech);
+        sfxAudioSource.PlayOneShot(readyToHarvestSound);
+    }
+
+    public void PlayAllClearSound()
+    {
+        sfxAudioSource.PlayOneShot(allClearSound);
     }
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,51 +17,103 @@ public enum Interaction
 public enum FlowerType
 {
     TIGER,
-    KANAITION,
+    CARNATION,
     ROSE
 }
+
 public class GameManager : Singleton<GameManager>
 {
+    [SerializeField]
+    Image scoreBgImage;
+
+    [SerializeField]
+    Sprite[] scoreSpriteList;
+    
+    [SerializeField]
+    int targetScore = 100;
+
     private int FlowersValue;
+
     public int _FlowerValue
     {
         get { return FlowersValue; }
         set
         {
-            FlowersValueUI.text = value + " / 100";
+            UpdateFlowersValueText(value);
 
-            if (value >= 100)
+            if (value >= targetScore)
             {
                 Clear();
             }
+
             FlowersValue = value;
         }
     }
-    [SerializeField] Text FlowersValueUI;
+
+    void Start()
+    {
+        UpdateFlowersValueText(FlowersValue);
+        scoreBgImage.sprite = scoreSpriteList[(int)FlowerType];
+    }
+
+    void UpdateFlowersValueText(int value)
+    {
+        FlowersValueUI.text = value + $" / {targetScore}";
+    }
+
+    [SerializeField]
+    Text FlowersValueUI;
 
     public Interaction interaction;
-    [SerializeField] List<Sprite> InteracitonSprites;
-    [SerializeField] Image MouseIcon;
-    [SerializeField] List<Image> ClickButton;
 
-    [SerializeField] Camera Cam;
-    [SerializeField] RectTransform MouseIconParentRt;
+    [SerializeField]
+    List<Sprite> InteracitonSprites;
 
-    [Header("게임 바깥쪽 변수")]
-    public FlowerType FlowerType;
+    [SerializeField]
+    Image MouseIcon;
+
+    [SerializeField]
+    List<Image> ClickButton;
+
+    [SerializeField]
+    Camera Cam;
+
+    [SerializeField]
+    RectTransform MouseIconParentRt;
+
+    public static FlowerType FlowerType
+    {
+        get => (FlowerType) PlayerPrefs.GetInt("FlowerType", 0);
+        set
+        {
+            PlayerPrefs.SetInt("FlowerType", (int) value);
+            PlayerPrefs.Save();
+        }
+    }
+
     void Clear()
+    {
+        ClearPopup.Instance.TriggerPop();
+    }
+
+    public static void LoadEndingScene()
     {
         switch (FlowerType)
         {
             case FlowerType.TIGER:
+                PlayerPrefs.SetInt("Ending1Clear", 1);
+                PlayerPrefs.Save();
                 SceneManager.LoadScene("Ending1");
                 break;
-            case FlowerType.KANAITION:
+            case FlowerType.CARNATION:
+                PlayerPrefs.SetInt("Ending2Clear", 1);
+                PlayerPrefs.Save();
                 SceneManager.LoadScene("Ending2");
                 break;
             case FlowerType.ROSE:
-                break;
-            default:
+                PlayerPrefs.SetInt("Ending3Clear", 1);
+                PlayerPrefs.Save();
+                SceneManager.LoadScene("Ending3");
                 break;
         }
     }
@@ -75,6 +126,7 @@ public class GameManager : Singleton<GameManager>
             OnInteraction();
             ButtonOutLine();
         }
+
         if (Input.GetMouseButtonDown(0))
         {
             if (interaction == Interaction.NONE)
@@ -93,6 +145,7 @@ public class GameManager : Singleton<GameManager>
             else interaction = Interaction.NONE;
         }
     }
+
     void ButtonOutLine()
     {
         if (interaction == Interaction.WATERING)
@@ -114,7 +167,6 @@ public class GameManager : Singleton<GameManager>
 
     void OnInteraction()
     {
-
         if (interaction != Interaction.NONE)
         {
             Vector2 mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -133,6 +185,7 @@ public class GameManager : Singleton<GameManager>
                             {
                                 //CropState.Harvest();
                             }
+
                             break;
                         case Interaction.NET:
                             if (CropState.Insect)
@@ -140,18 +193,21 @@ public class GameManager : Singleton<GameManager>
                                 //Audio.Instance.PlayBugDeathSound();
                                 //CropState.Insect = false;
                             }
+
                             break;
                         case Interaction.WATERING:
                             if (!CropState.Insect && CropState._GrowValue > 0 && CropState._IsMaxGrow == false)
                             {
                                 CropState._GrowValue++;
                             }
+
                             break;
                         case Interaction.PLANT:
                             if (!CropState.Insect && CropState._GrowValue == 0)
                             {
                                 CropState._GrowValue++;
                             }
+
                             break;
                     }
                 }
@@ -164,9 +220,10 @@ public class GameManager : Singleton<GameManager>
     ///</summary>
     public void IconClick(int value)
     {
-        interaction = (Interaction)value;
+        interaction = (Interaction) value;
         Audio.Instance.PlayButtonClick();
     }
+
     ///<summary>
     ///마우스 아이콘을 바꿔준다
     ///</summary>
@@ -191,7 +248,7 @@ public class GameManager : Singleton<GameManager>
                     Cursor.visible = false;
                 }
 
-                MouseIcon.sprite = InteracitonSprites[(int)interaction - 1];
+                MouseIcon.sprite = InteracitonSprites[(int) interaction - 1];
                 MouseIcon.gameObject.SetActive(true);
                 MouseIcon.transform.position = Input.mousePosition;
 

@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 1413431087}
   - component: {fileID: 1413431089}
   m_Layer: 5
-  m_Name: flower1 (1)
+  m_Name: flower1 (Rose)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,11 +608,11 @@ MonoBehaviour:
       - m_Target: {fileID: 744203811}
         m_TargetAssemblyTypeName: SceneMove, Assembly-CSharp
         m_MethodName: SceneInGame
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -630,7 +630,7 @@ GameObject:
   - component: {fileID: 1464871963}
   - component: {fileID: 1464871962}
   m_Layer: 5
-  m_Name: flower1
+  m_Name: flower1 (Carnation)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,11 +702,11 @@ MonoBehaviour:
       - m_Target: {fileID: 744203811}
         m_TargetAssemblyTypeName: SceneMove, Assembly-CSharp
         m_MethodName: SceneInGame
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 2023068748}
   - component: {fileID: 2023068750}
   m_Layer: 5
-  m_Name: flower1 (2)
+  m_Name: flower1 (Tiger)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1127,7 +1127,7 @@ MonoBehaviour:
       - m_Target: {fileID: 744203811}
         m_TargetAssemblyTypeName: SceneMove, Assembly-CSharp
         m_MethodName: SceneInGame
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -159,7 +159,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 512.3}
+  m_SizeDelta: {x: -718.47, y: 320.59}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &165885590
 MonoBehaviour:
@@ -194,8 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE74\uB124\uC774\uC158\uC758 \uAF43\uB9D0\uC740 \u201C\uBAA8\uC815\uACFC
-    \uC0AC\uB791\u201D\uC785\uB2C8\uB2E4."
+  m_Text: "\uC7A5\uBBF8\uC758 \uAF43\uB9D0\uC740 \u201C\uC5F4\uB82C\uD55C \uC0AC\uB791\u201D\uC785\uB2C8\uB2E4.\r"
 --- !u!222 &165885591
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -277,19 +276,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_Font: {fileID: 12800000, guid: 0e70fe119669c6e4e812d3b3920aa813, type: 3}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 40
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA54\uC778 \uD654\uBA74\uC73C\uB85C"
+  m_Text: "\uBA54\uC778 \uD654\uBA74\uC73C\uB85C\n(\uB2E4\uB978 \uAF43\uB9D0\uB3C4
+    \uB3C4\uC804\uD574 \uBCF4\uC138\uC694!)"
 --- !u!222 &235547014
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -765,7 +765,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 512.3}
+  m_SizeDelta: {x: -718.47, y: 320.59}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1398521076
 MonoBehaviour:
@@ -800,7 +800,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "5\uC6D4 8\uC77C\uC740 \uC5B4\uBC84\uC774\uB0A0."
+  m_Text: "\uACB0\uD63C\uC2DD\uC7A5\uC5D0\uC11C \uC2E0\uB791 \uC2E0\uBD80\uAC00 \uC11C\uB85C\uB97C
+    \uB9C8\uC8FC \uBCF4\uACE0 \uC788\uC2B5\uB2C8\uB2E4."
 --- !u!222 &1398521077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -860,7 +861,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 512.3}
+  m_SizeDelta: {x: -718.47, y: 320.59}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1423949134
 MonoBehaviour:
@@ -895,9 +896,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uAF43\uC758 \uC694\uC815 \uB9B4\uB9AC\uC544\uAC00 \uB9CC\uB4E0 \uCE74\uB124\uC774\uC158\uC744
-    \uC791\uC740 \uC190\uC73C\uB85C \uD55C\uAC00\uB4DD \uC9D1\uC5B4 \uB4E4\uACE0\n\uC5C4\uB9C8\uC5D0\uAC8C
-    \uB2E4\uAC00\uAC00 \uC190\uC744 \uB192\uC774 \uBED7\uC5B4 \uC120\uBB3C\uD569\uB2C8\uB2E4.\r"
+  m_Text: "\uBD89\uAC8C \uD65C\uC9DD \uD540 \uC7A5\uBBF8 \uB355\uBD84\uC5D0 \uC2E0\uBD80\uC758
+    \uC5BC\uAD74 \uC804\uCCB4\uAC00 \uBE68\uAC1B\uAC8C \uB2EC\uC544\uC624\uB978 \uAC74
+    \uC544\uBB34\uB3C4 \uBAA8\uB974\uB294 \uAC83 \uAC19\uB124\uC694."
 --- !u!222 &1423949135
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1247,19 +1248,19 @@ PlayableDirector:
   - key: {fileID: -7224365371008328113, guid: bd08442b7e85e6943a41e3256301525a, type: 2}
     value: {fileID: 1423949132}
   - key: {fileID: 1693831036123632524, guid: 8101797343a6f144f84acb2f6086c85c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1471839581}
   - key: {fileID: 820374009293658109, guid: 8101797343a6f144f84acb2f6086c85c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1778824553}
   - key: {fileID: 5115780691525742251, guid: 8101797343a6f144f84acb2f6086c85c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 742344085}
   - key: {fileID: 8626306381024791136, guid: 8101797343a6f144f84acb2f6086c85c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1986852132}
   - key: {fileID: -5205217636749286210, guid: 8101797343a6f144f84acb2f6086c85c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 165885588}
   - key: {fileID: 6387151791979269483, guid: 8101797343a6f144f84acb2f6086c85c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1398521074}
   - key: {fileID: -7224365371008328113, guid: 8101797343a6f144f84acb2f6086c85c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1423949132}
   m_ExposedReferences:
     m_References:
     - 9522151595ceef24e8dcbf3d34de7c77: {fileID: 165885588}
@@ -1395,8 +1396,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -402}
-  m_SizeDelta: {x: 428.7305, y: 80.387}
+  m_AnchoredPosition: {x: 0, y: -400}
+  m_SizeDelta: {x: 740, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1986852134
 MonoBehaviour:
@@ -1444,7 +1445,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1986852137}
         m_TargetAssemblyTypeName: SceneMove, Assembly-CSharp
-        m_MethodName: SceneGameMain
+        m_MethodName: SceneGameMainWithAllClearCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
