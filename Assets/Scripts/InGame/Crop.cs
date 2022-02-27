@@ -43,7 +43,7 @@ public class Crop : MonoBehaviour
             }
             if (GrowValue < value)
             {
-                GrowCooldown = 1;
+                GrowCooldown = 3;
             }
             if (value == 0) SpriteRenderer.sprite = null;
             else
