@@ -1032,7 +1032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8665880510024814141, guid: c4c70b9bc6f4f984abe1bf4aa9645704, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 46.000004
       objectReference: {fileID: 0}
     - target: {fileID: 8665880510024814141, guid: c4c70b9bc6f4f984abe1bf4aa9645704, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1905,6 +1905,8 @@ GameObject:
   - component: {fileID: 1007790913}
   - component: {fileID: 1007790912}
   - component: {fileID: 1007790915}
+  - component: {fileID: 1007790916}
+  - component: {fileID: 1007790917}
   m_Layer: 5
   m_Name: Clear Popup
   m_TagString: Untagged
@@ -2003,6 +2005,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1007790912}
+--- !u!223 &1007790916
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007790910}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 1489428679
+  m_SortingOrder: 60
+  m_TargetDisplay: 0
+--- !u!114 &1007790917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007790910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1001 &1128860604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2121,7 +2161,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: a1978669815acc440bad2ac3de6fbf9f, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
